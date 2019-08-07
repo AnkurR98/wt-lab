@@ -95,8 +95,8 @@
     <br /><br />
     
     <form>
-        First Name: <input type="text" placeholder="Enter first name" required><br>
-        Last Name: <input type="text" placeholder="Enter last name" required><br>
+        First Name: <input type="text" placeholder="Enter first name"><br>
+        Last Name: <input type="text" placeholder="Enter last name"><br>
         Gender: <input type="radio" name="gender">Male
                 <input type="radio" name="gender">Female
                 <input type="radio" name="gender">Helicopter
@@ -105,13 +105,35 @@
                          <input type="checkbox">ML
                          <input type="checkbox">DBMS
                          <input type="checkbox">Python<br>
-        A'ight submit up: <input type="button" value="submit">
+        A'ight submit up: <input type="button" value="submit" onclick="buttonpress()">
     </form>
     
     <br /><br />
     
     <script type="text/javascript">
         document.write("Hello World");
+        var a = 10;
+        var b = 20;
+        c = a + b;
+        document.write("<h4>Sum of the two numbers : "+c+".</h4>");
+        var car = ["BMW", "Audi"];
+        document.write(car+"<br>");
+        var car1 = new Array("BMW","Audi");
+        document.write(car1);
+        
+        function sum()  {
+            var a = 10;
+            var b = 20;
+            var c;
+            c = a + b;
+            document.write(c);
+        }
+        sum();
+    
+        function buttonpress()  {
+            alert("Jeez thanks for pressing me....");    
+        }
+        
     </script>
     
 </body>
