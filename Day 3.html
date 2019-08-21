@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Program 3</title>
+</head>    
+<script type="text/javascript">
+
+    while(true) {
+        var input = window.prompt("Enter a number or a string : ");
+        mainOps(input);
+    }
+    
+    function isVowel(character) {
+        switch(character)   {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u': return true;
+                      break;
+            default: return false;
+        }
+    }
+
+    function stringManipulation(stringtypevar) {
+        stringtypevar = stringtypevar.toLowerCase();
+        for(var i = 0; i < stringtypevar.length; i++)   {
+            if(isVowel(stringtypevar.charAt(i))) {
+                return (i+1);
+            }
+        }
+        if(i == stringtypevar.length)
+            return -999;
+    }
+
+    function numberManipulation(numbertypevar)   {
+        var reversenumber = 0;
+        while(numbertypevar > 0)    {
+            var dig = numbertypevar % 10;
+            reversenumber = reversenumber * 10 + dig;
+            numbertypevar = Math.trunc(numbertypevar / 10);
+        }
+        return reversenumber;
+    }
+
+    function mainOps(input)  {       
+        if(!isNaN(input))   {
+            var result = numberManipulation(parseInt(input, 10));
+            alert("Reverse of "+ input +" is = " + result);
+        }
+        else    {
+            var vowelposition = stringManipulation(input);
+            if(vowelposition == -999)
+                alert("Given string has no vowels.");
+            else
+                alert("First Vowel Position in string \""+ input +"\" = " + vowelposition);
+        }
+    }
+</script>
+<body>
+
+
+</body>
+
+</html>
