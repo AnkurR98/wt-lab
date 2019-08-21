@@ -43,10 +43,18 @@
         return reversenumber;
     }
 
+    function numberManipulation2(numbertypevar) {
+        numbertypevar = parseInt(numbertypevar, 10);
+        if(numbertypevar < 10)
+            return numbertypevar;
+        return (numbertypevar % 10) * (10**(numbertypevar.toString().length - 1)) + numberManipulation2(numbertypevar / 10);
+    }
+
     function mainOps(input)  {       
         if(!isNaN(input))   {
             var result = numberManipulation(parseInt(input, 10));
-            alert("Reverse of "+ input +" is = " + result);
+            var result1 = numberManipulation2(parseInt(input, 10));
+            alert("Reverse of "+ input +" is = " + result + " and " + result1);
         }
         else    {
             var vowelposition = stringManipulation(input);
