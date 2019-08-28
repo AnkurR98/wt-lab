@@ -1,15 +1,30 @@
 <html>
     <body>
-        <script>
-            var a = setInterval(print, 500);
-            var i = 0;
-            function print()    {
-                if(i%2 == 0)
-                    document.write("<p padding:0px margin:0px style=\"color: red\">Hjai</p>");
-                else
-                    document.write("<p padding:0px margin:0px style=\"color: blue\">Hjai</p>");
-                i++;
+            <p id="a" font-size="5px">Starting Text</p>
+    </body>
+    <script>
+        var textsize = 5;
+        var truth = true;
+        // document.write("<h1 id=\"a\" font-size=\""+textsize+"px\">Starting Text</h1>");
+        setInterval(textVariations, 1000);
+        function textVariations()   {
+            alert(textsize);
+            if(truth)   {
+                var x = document.getElementById("a");
+                x.innerHTML = "Text Growing";
+                x.setAttribute("style", "font-size:\""+textsize+"\"; color:red;")
+                textsize += 5;
+                document.write("<p id=\"a\" font-size=\""+textsize+"\">Starting Text</p>");
+                if(textsize>50)
+                    truth = false;
             }
-        </script>
-
+            else {
+                var x = document.getElementById("a");
+                x.innerHTML = "Text Growing";
+                x.setAttribute("style", "font-size:\""+textsize+"\"; color:blue;")
+                textsize -= 5;
+            }
+        }
+        
+    </script>
 </html>
