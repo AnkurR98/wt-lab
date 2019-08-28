@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./XMLCSS.css"?>
+<Student>
+    <title>STUDENT DETAILS</title>
+    <student slno="1">
+        <USN>1AY16CS016</USN>
+        <Name>Ankur Ramaswamy</Name>
+        <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
+        <Branch>Computer Science and Engineering</Branch>
+        <YearOfJoining>2016</YearOfJoining>
+        <EmailID>notgonnatell@dontask.com</EmailID>
+    </student>
+    <student slno="2">
+        <USN>1AY16CS012</USN>
+        <Name>Amritpal Singh</Name>
+        <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
+        <Branch>Computer Science and Engineering</Branch>
+        <YearOfJoining>2016</YearOfJoining>
+        <EmailID>notgonnatellagain@dontask.com</EmailID>
+    </student>
+    <student slno="3">
+        <USN>1AY16CS013</USN>
+        <Name>Anand Sharma</Name>
+        <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
+        <Branch>Computer Science and Engineering</Branch>
+        <YearOfJoining>2016</YearOfJoining>
+        <EmailID>itoldyouiwonttell@dontask.com</EmailID>
+    </student>
+</Student>
