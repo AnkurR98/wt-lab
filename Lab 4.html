@@ -1,38 +1,48 @@
 <html>
     <body>
-            <p id="a" style="font-size:50px; color:green"></p>
+            <p id="a" style="font-size:5px; color:red">Text Growing</p>
     </body>
     <script>
-        var size = textsize = 5;
+        var textsize  = 10;
+        //let size = textsize;
         var color = "red";
         var attribstring = "font-size:"+textsize+"px; color:"+color+";";
         //alert(attribstring);
 
         var x = document.getElementById("a");
-        var count = setInterval(textManipulation, 1000);
+        var count = setInterval(textManipulation, 800);
 
         function textManipulation ()    {
-            var attribstring = "font-size:"+size+"px; color:"+color+";";
-            console.log(x.getAttribute("style") + "   " + textsize);
-            if(textsize === 110)
+            //var attribstring = "font-size:"+size+"px; color:"+color+";";
+            //console.log(x.getAttribute("style") + "   " + textsize);
+            if(textsize > 100)  {
                 clearInterval(count);
-
+                return;
+            }
+            
             else if(textsize <= 50)   {
                 //console.log(x.getAttribute("style"));
-                size = textsize;
+                //size = textsize;
+                attribstring = "font-size:"+textsize+"px; color:"+color+";";
                 //alert(x.getAttribute("style"));
                 x.innerHTML = "Text Growing";
                 x.setAttribute("style", attribstring);
+                console.log("Grow");
             }
 
             else    {
                 //console.log(x.getAttribute("style"));
                 color = "blue";
-                size = 105 - textsize;
+                //size = 105 - textsize;
+                attribstring = "font-size:"+(105 - textsize)+"px; color:"+color+";";
                 //alert(x.getAttribute("style"));
+                //x.setAttribute("style", attribstring);
                 x.innerHTML = "Text Shrinking";
                 x.setAttribute("style", attribstring);
+                console.log("Shrink");
             }
+            //attribstring = "font-size:"+size+"px; color:"+color+";";
+            console.log(x.getAttribute("style") + "   " + textsize);
             textsize += 5;
         }
         
