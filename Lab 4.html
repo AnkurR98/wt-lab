@@ -1,37 +1,39 @@
 <html>
     <body>
-            <p id="a" font-size="5px">Starting Text</p>
+            <p id="a" style="font-size:50px; color:green"></p>
     </body>
     <script>
-        var textsize = 5;
-        var truth = true;
-        
+        var size = textsize = 5;
+        var color = "red";
+        var attribstring = "font-size:"+textsize+"px; color:"+color+";";
         //alert(attribstring);
-        // document.write("<h1 id=\"a\" font-size=\""+textsize+"px\">Starting Text</h1>");
-        nxx = setInterval(textVariations, 1000);
-        function textVariations()   {
-            //alert(textsize);
-            if(truth == 1)   {
-                var x = document.getElementById("a");
-                var attribstring = "font-size: \"" + textsize.toString() + "px\"; color: red;";
+
+        var x = document.getElementById("a");
+        var count = setInterval(textManipulation, 1000);
+
+        function textManipulation ()    {
+            var attribstring = "font-size:"+size+"px; color:"+color+";";
+            console.log(x.getAttribute("style") + "   " + textsize);
+            if(textsize === 110)
+                clearInterval(count);
+
+            else if(textsize <= 50)   {
+                //console.log(x.getAttribute("style"));
+                size = textsize;
+                //alert(x.getAttribute("style"));
+                x.innerHTML = "Text Growing";
                 x.setAttribute("style", attribstring);
-                x.innerHTML = "Text Growing";         
-                alert(x.getAttribute("style"));
-                textsize += 5;
-                //document.write("<p id=\"a\" font-size: \""+textsize+"\">Starting Text</p>");
-                if(textsize>50)
-                    truth = false;
             }
-            else {
-                textsize = 50;
-                var x = document.getElementById("a");
+
+            else    {
+                //console.log(x.getAttribute("style"));
+                color = "blue";
+                size = 105 - textsize;
+                //alert(x.getAttribute("style"));
                 x.innerHTML = "Text Shrinking";
-                var attribstring = "font-size: \"" + textsize.toString() + "px\"; color: blue;";
-                x.setAttribute("style", "font-size: \""+textsize+"\"; color: blue;")
-                textsize -= 5;
-                if(textsize<5)
-                    clearInterval(nxx);
+                x.setAttribute("style", attribstring);
             }
+            textsize += 5;
         }
         
     </script>
