@@ -8,31 +8,36 @@
 <body>
 	<?php
 		if($_SERVER['REQUEST_METHOD'] == 'POST')	{
+			if(is_numeric($_POST['fnum']) && is_numeric($_POST['snum']))	{
 			//echo "Hi";
-			switch ($_POST['ops']) {
-				case '+':
-					# code...
-					$result = $_POST['fnum'] + $_POST['snum'];
-					//echo $result;
-					break;
-				case '-':
-					# code...
-					$result = $_POST['fnum'] - $_POST['snum'];
-					break;
-				case '*':
-					# code...
-					$result = $_POST['fnum'] * $_POST['snum'];
-					break;
-				case '/':
-					# code...
-					$result = $_POST['snum'] == 0 ? 'Divide by zero error' : $_POST['fnum'] / $_POST['snum'];
-					//echo $result;
-					break;
+				switch ($_POST['ops']) {
+					case '+':
+						# code...
+						$result = $_POST['fnum'] + $_POST['snum'];
+						//echo $result;
+						break;
+					case '-':
+						# code...
+						$result = $_POST['fnum'] - $_POST['snum'];
+						break;
+					case '*':
+						# code...
+						$result = $_POST['fnum'] * $_POST['snum'];
+						break;
+					case '/':
+						# code...
+						$result = $_POST['snum'] == 0 ? 'Divide by zero error' : $_POST['fnum'] / $_POST['snum'];
+						//echo $result;
+						break;
 
-				// default:
-				// 	# code...
-				// 	break;
+					// default:
+					// 	# code...
+					// 	break;
+				}
 			}
+			else { ?>
+				<script> alert("Enter valid numbers in fields"); </script>
+			<?php }
 		}
 	 ?>
 	 <center>
@@ -45,7 +50,7 @@
 				  <input type='submit' name='ops' value='-'>
 				  <input type='submit' name='ops' value='*'>
 				  <input type='submit' name='ops' value='/'><br><br>
- 		<h4>Output:</h4> <input type='text' name='result' disabled="true" value="<?php echo $result?>"><br><br>
+ 		<h4>Output:</h4> <input type='text' name='result' readonly="true" value="<?php echo $result?>"><br><br>
 
  		<input type='button' value='Clear' onclick="window.location.reload();">
  	</form>
