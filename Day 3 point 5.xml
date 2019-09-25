@@ -8,7 +8,7 @@
         <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
         <Branch>Computer Science and Engineering</Branch>
         <YearOfJoining>2016</YearOfJoining>
-        <EmailID>notgonnatell@dontask.com</EmailID>
+        <EmailID>abc@def.com</EmailID>
     </student>
     <student slno="2">
         <USN>1AY16CS012</USN>
@@ -16,7 +16,7 @@
         <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
         <Branch>Computer Science and Engineering</Branch>
         <YearOfJoining>2016</YearOfJoining>
-        <EmailID>notgonnatellagain@dontask.com</EmailID>
+        <EmailID>ghi@def.com</EmailID>
     </student>
     <student slno="3">
         <USN>1AY16CS013</USN>
@@ -24,6 +24,6 @@
         <NameOfCollege>Acharya Institute of Technology</NameOfCollege>
         <Branch>Computer Science and Engineering</Branch>
         <YearOfJoining>2016</YearOfJoining>
-        <EmailID>itoldyouiwonttell@dontask.com</EmailID>
+        <EmailID>xyz@def.com</EmailID>
     </student>
 </Student>
