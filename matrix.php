@@ -91,6 +91,6 @@
     // print_r($d);
     for($i = 0; $i < 3; $i++)   {
         for($j = 0; $j < 3; $j++)
-            echo $c[$i][$j]."\t";
+            echo $c[$i][$j]."&nbsp &nbsp";
         echo "<br>";
     }
