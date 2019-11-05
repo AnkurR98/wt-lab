@@ -1,5 +1,5 @@
 <?php error_reporting(E_ALL & ~E_NOTICE);
-    $conn = mysqli_connect("localhost", "root", "root123", "succ");
+    $conn = mysqli_connect("localhost", "root", "admin", "playground");
     // if (mysqli_connect_errno())   {
     //     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     // }
@@ -14,12 +14,30 @@
     $heads = array_keys($students[0]);
     unset($heads, "RNDNO");
     
+    echo "<table style=\"width:100%\">
+    <tr>
+        <th>USN</th>
+        <th>NAME</th> 
+        <th>COLLEGE</th>
+        <th>BRANCH</th>
+        <th>CONTACT</th>
+        <th>EMAIL</th>
+    </tr>";
 
     for($i = 0; $i < count($students); $i++)    {     
-        print_r($students[$i]);
-        echo "<br>";
+            echo
+            "<tr>
+                <td>".$students[$i]['USN']."</td>
+                <td>".$students[$i]['NAME']."</td> 
+                <td>".$students[$i]['COLLEGE']."</td>
+                <td>".$students[$i]['BRANCH']."</td>
+                <td>".$students[$i]['CONTACT']."</td>
+                <td>".$students[$i]['EMAIL']."</td>
+            </tr>";
+            
+
+        
     }
-    echo "<br><br>";
 
     for($i = 0; $i < count($students); $i++)    {
         $min = $i;
