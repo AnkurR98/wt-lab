@@ -12,32 +12,10 @@
     }
 
     $heads = array_keys($students[0]);
-    unset($heads, "RNDNO");
-    
-    echo "<table style=\"width:100%\">
-    <tr>
-        <th>USN</th>
-        <th>NAME</th> 
-        <th>COLLEGE</th>
-        <th>BRANCH</th>
-        <th>CONTACT</th>
-        <th>EMAIL</th>
-    </tr>";
-
-    for($i = 0; $i < count($students); $i++)    {     
-            echo
-            "<tr>
-                <td>".$students[$i]['USN']."</td>
-                <td>".$students[$i]['NAME']."</td> 
-                <td>".$students[$i]['COLLEGE']."</td>
-                <td>".$students[$i]['BRANCH']."</td>
-                <td>".$students[$i]['CONTACT']."</td>
-                <td>".$students[$i]['EMAIL']."</td>
-            </tr>";
-            
-
-        
-    }
+    //unset($heads, "RNDNO");
+    echo "<center>";
+    echo "<u><h3>Unsorted table of students :- </h3></u>";
+    printTables($students);
 
     for($i = 0; $i < count($students); $i++)    {
         $min = $i;
@@ -52,9 +30,32 @@
         $students[$min] = $temp;
     }
 
-    for($i = 0; $i < count($students); $i++)    {
-        unset($students[$i]["RNDNO"]);    
-        print_r($students[$i]);
-        echo "<br>";
+    echo "<br><br><u><h3>Sorted table of students :- </h3></u>";
+    printTables($students);
+    echo "</center>";
+
+
+    function printTables($arrayvar) {
+        echo "<table border=2px;>
+            <tr>
+                <th>USN</th>
+                <th>NAME</th> 
+                <th>COLLEGE</th>
+                <th>BRANCH</th>
+                <th>CONTACT</th>
+                <th>EMAIL</th>
+            </tr>";
+
+        for($i = 0; $i < count($arrayvar); $i++)    {     
+                echo "<tr>
+                    <td>".$arrayvar[$i]['USN']."</td>
+                    <td>".$arrayvar[$i]['NAME']."</td> 
+                    <td>".$arrayvar[$i]['COLLEGE']."</td>
+                    <td>".$arrayvar[$i]['BRANCH']."</td>
+                    <td>".$arrayvar[$i]['CONTACT']."</td>
+                    <td>".$arrayvar[$i]['EMAIL']."</td>
+                    </tr>";
+        }
+        echo "</table>";
     }
-?>
+?> 
